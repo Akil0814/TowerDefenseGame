@@ -1,15 +1,21 @@
 #pragma once
 
 #include"tile.h"
+#include"route.h"
 
 #include<SDL.h>
 #include<string>
 #include<fstream>
-#include<Sstream>
+#include<sstream>
+#include<unordered_map>
 
 class Map
 {
 public:
+	typedef std::unordered_map<int, Route> SpawnerRoutePool; //路径池
+
+public:
+
 	Map() {};
 	~Map() {};
 
@@ -51,6 +57,8 @@ public:
 
 		tile_map = tile_map_temp;
 
+		generate_map_cache();
+
 		return true;
 	}
 
@@ -62,9 +70,36 @@ public:
 		return tile_map[0].size();
 	}
 
+	size_t get_height() const
+	{
+		return tile_map.size();
+	}
+
+	const TileMap& get_tile_map() const
+	{
+		return tile_map;
+	}
+
+	const SDL_Point& get_idx_home() const
+	{
+		return idx_home;
+	}
+
+	const SpawnerRoutePool& get_idx_spawner_pool() const
+	{
+		return spawner_route_pool;
+	}
+
+	void place_tower(const SDL_Point& idx_tile)
+	{
+		tile_map[idx_tile.y][idx_tile.x].has_tower = true;
+	}
+
 private:
 	TileMap tile_map;
 	SDL_Point idx_home = {0};
+	SpawnerRoutePool spawner_route_pool;
+
 
 private:
 
@@ -110,9 +145,23 @@ private:
 
 	void generate_map_cache()
 	{
-		for (int y = 0; ; y++)
+		for (int y = 0;y<get_height(); y++)
 		{
-
+			for (int x = 0; x < get_width(); x++)
+			{
+				const Tile& tile = tile_map[y][x];
+				if (tile.special_flag < 0)
+					continue;
+				if (tile.special_flag == 0)//特殊标志等于==0为房屋
+				{
+					idx_home.x = x;
+					idx_home.y = y;
+				}
+				else//其他值是刷怪点
+				{
+					spawner_route_pool[tile.special_flag] = Route(tile_map, { x,y });//创建一个行进路线
+				}
+			}
 		}
 	}
 

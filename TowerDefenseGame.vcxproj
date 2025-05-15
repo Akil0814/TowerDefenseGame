@@ -146,9 +146,11 @@ copy /Y "%DLL_SRC_DIR%\SDL2_ttf\lib\x64\SDL2_ttf.dll" "$(OutDir)"
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="config_manager.h" />
     <ClInclude Include="game_manager.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="route.h" />
     <ClInclude Include="tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
