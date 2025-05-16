@@ -17,10 +17,17 @@
     <ClInclude Include="config_manager.h">
       <Filter>manager</Filter>
     </ClInclude>
+    <ClInclude Include="wave.h" />
+    <ClInclude Include="enemy_type.h">
+      <Filter>enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
       <UniqueIdentifier>{7ed7ac7b-2306-4361-8001-f611d9865da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy">
+      <UniqueIdentifier>{b161b1f8-fb69-479d-b658-6e37f8966fc4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
