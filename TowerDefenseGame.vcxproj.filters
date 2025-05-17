@@ -21,6 +21,9 @@
     <ClInclude Include="enemy_type.h">
       <Filter>enemy</Filter>
     </ClInclude>
+    <ClInclude Include="resources_manager.h">
+      <Filter>manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">

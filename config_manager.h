@@ -184,7 +184,7 @@ public:
 		if (!json_root || json_root->type != cJSON_Object)//是否解析成功且root是否是目标对象
 			return false;
 
-		cJSON* json_basic = cJSON_GetObjectItem(json_root, "basic");
+		cJSON* json_basic = cJSON_GetObjectItem(json_root, "basic");//获取最外层
 		cJSON* json_player = cJSON_GetObjectItem(json_root, "player");
 		cJSON* json_tower = cJSON_GetObjectItem(json_root, "tower");
 		cJSON* json_enemy = cJSON_GetObjectItem(json_root, "enemy");
@@ -223,7 +223,7 @@ protected:
 
 private:
 
-	void parse_basic_template(BasicTemplate& tpl, cJSON* json_root)
+	void parse_basic_template(BasicTemplate& tpl, cJSON* json_root)//解析基本配置
 	{
 		if (!json_root || json_root->type != cJSON_Object) return;
 
@@ -233,13 +233,15 @@ private:
 
 		if (json_window_title && json_window_title->type == cJSON_String)
 			tpl.window_title = json_window_title->valuestring;
+
 		if (json_window_width && json_window_width->type == cJSON_Number)
 			tpl.window_width = json_window_width->valueint;
+
 		if (json_window_height && json_window_height->type == cJSON_Number)
 			tpl.window_height = json_window_height->valueint;
 	}
 
-	void parse_player_template(PlayerTemplate& tpl, cJSON* json_root)
+	void parse_player_template(PlayerTemplate& tpl, cJSON* json_root)//解析玩家操作角色配置
 	{
 		if (!json_root || json_root->type != cJSON_Object) return;
 
@@ -261,7 +263,7 @@ private:
 			tpl.skill_damage = json_skill_damage->valuedouble;
 	}
 
-	void parse_number_array(double* ary, int max_len, cJSON* json_root)
+	void parse_number_array(double* ary, int max_len, cJSON* json_root)//解析数组
 	{
 		if (!json_root || json_root->type != cJSON_Array)
 			return;
@@ -270,7 +272,7 @@ private:
 		cJSON* json_element = nullptr;
 		cJSON_ArrayForEach(json_element, json_root)
 		{
-			idx++;
+			idx++;//记录下标
 			if (json_element->type != cJSON_Number || idx >= max_len)
 				continue;
 
