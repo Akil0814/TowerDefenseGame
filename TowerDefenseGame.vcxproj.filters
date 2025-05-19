@@ -25,6 +25,7 @@
       <Filter>manager</Filter>
     </ClInclude>
     <ClInclude Include="timer.h" />
+    <ClInclude Include="animation.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
