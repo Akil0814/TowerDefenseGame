@@ -16,14 +16,13 @@ public:
 
 public:
 
-	Map() {};
-	~Map() {};
+	Map() = default;
+	~Map() = default;
 
 	bool load(const std::string& path)
 	{
 		std::ifstream file(path);
-		if (!file.good())
-			return false;
+		if (!file.good()) return false;
 
 		TileMap tile_map_temp;
 
@@ -33,23 +32,23 @@ public:
 		while (std::getline(file, str_line))
 		{
 			str_line = trim_str(str_line);
-			if (str_line.empty())//不是空行时
+			if (str_line.empty())
 				continue;
 
-			idx_x = -1;
-			idx_y++;
-			tile_map_temp.emplace_back();//追加一行
+			idx_x = -1, idx_y++;
+			tile_map_temp.emplace_back();
 
 			std::string str_tile;
 			std::stringstream str_stream(str_line);
 			while (std::getline(str_stream, str_tile, ','))
 			{
 				idx_x++;
-				tile_map_temp[idx_y].emplace_back();//不断增加列
+				tile_map_temp[idx_y].emplace_back();
 				Tile& tile = tile_map_temp[idx_y].back();
 				load_tile_from_string(tile, str_tile);
 			}
 		}
+
 		file.close();
 
 		if (tile_map_temp.empty() || tile_map_temp[0].empty())
@@ -65,7 +64,7 @@ public:
 	size_t get_width() const
 	{
 		if (tile_map.empty())
-			return 0; 
+			return 0;
 
 		return tile_map[0].size();
 	}

@@ -24,6 +24,7 @@
     <ClInclude Include="resources_manager.h">
       <Filter>manager</Filter>
     </ClInclude>
+    <ClInclude Include="timer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
