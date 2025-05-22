@@ -27,6 +27,9 @@
     <ClInclude Include="timer.h" />
     <ClInclude Include="animation.h" />
     <ClInclude Include="vector2.h" />
+    <ClInclude Include="enemy.h">
+      <Filter>enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
@@ -34,6 +37,9 @@
     </Filter>
     <Filter Include="enemy">
       <UniqueIdentifier>{b161b1f8-fb69-479d-b658-6e37f8966fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NewFilter1">
+      <UniqueIdentifier>{1bd59764-67a0-4b5b-a2fe-f211f869ee1d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

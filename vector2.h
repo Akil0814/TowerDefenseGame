@@ -44,7 +44,7 @@ public:
 
 	void operator*=(double val)
 	{
-		x* val, y* val;
+		x*=val, y*=val;
 	}
 
 	bool operator==(const Vector2& vec)const
