@@ -48,6 +48,12 @@
     <ClInclude Include="enemy_manager.h">
       <Filter>manager</Filter>
     </ClInclude>
+    <ClInclude Include="home_manager.h">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="wave_manager.h">
+      <Filter>manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">

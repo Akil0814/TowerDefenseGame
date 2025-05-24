@@ -2,6 +2,9 @@
 
 #include"manager.h"
 #include"enemy.h"
+#include"config_manager.h"
+#include"home_manager.h"
+
 #include <vector>
 #include<SDL.h>
 
@@ -26,8 +29,12 @@ public:
 			enemy->on_render(renderer);
 	}
 
-	EnemyManager() {};
-	~EnemyManager() {};
+	EnemyManager()=default;
+	~EnemyManager()
+	{
+		for (Enemy* enemy : enemy_list)
+			delete enemy;
+	}
 
 private:
 	EnemyList enemy_list;
@@ -35,6 +42,27 @@ private:
 private:
 	void process_home_collision()
 	{
+		static const SDL_Point& idx_home = ConfigManager::instance()->map.get_idx_home();
+		static const SDL_Rect& rect_tile_map = ConfigManager::instance()->rect_tile_map;
+		static const Vector2 position_home_tile =
+		{
+			(double)rect_tile_map.x + idx_home.x * SIZE_TILE,
+			(double)rect_tile_map.y + idx_home.y * SIZE_TILE
+		};
+
+		for (Enemy* enemy : enemy_list) 
+		{
+			if (enemy->can_remove())continue;
+
+			const Vector2& position = enemy->get_position();
+
+			if (position.x >= position_home_tile.x && position.y >= position_home_tile.y
+				&& position.x <= position_home_tile.x + SIZE_TILE && position.y <= position_home_tile.y + SIZE_TILE)
+			{
+				enemy->make_invalid();
+				HomeManager::instance()->decrease_hp(enemy->get_damage());
+			}
+		}
 
 	}
 

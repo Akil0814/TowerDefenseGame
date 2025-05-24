@@ -154,6 +154,7 @@ copy /Y "%DLL_SRC_DIR%\SDL2_ttf\lib\x64\SDL2_ttf.dll" "$(OutDir)"
     <ClInclude Include="game_manager.h" />
     <ClInclude Include="goblin_enemy.h" />
     <ClInclude Include="goblin_priest_enemy.h" />
+    <ClInclude Include="home_manager.h" />
     <ClInclude Include="king_slim_enemy.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="map.h" />
@@ -165,6 +166,7 @@ copy /Y "%DLL_SRC_DIR%\SDL2_ttf\lib\x64\SDL2_ttf.dll" "$(OutDir)"
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector2.h" />
     <ClInclude Include="wave.h" />
+    <ClInclude Include="wave_manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
