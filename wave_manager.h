@@ -1,6 +1,7 @@
 #pragma once
 #include "manager.h"
 #include"timer.h"
+#include"config_manager.h"
 
 class WaveManager:public Manager<WaveManager>
 {
@@ -8,7 +9,7 @@ class WaveManager:public Manager<WaveManager>
 public:
 	WaveManager()
 	{
-
+		static const std::vector<Wave>& wave_list = ConfigManager::instance()->wave_list;
 	}
 	~WaveManager()
 	{
