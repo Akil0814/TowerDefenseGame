@@ -10,6 +10,9 @@ public:
 	WaveManager()
 	{
 		static const std::vector<Wave>& wave_list = ConfigManager::instance()->wave_list;
+
+		timer_start_wave.set_one_shot(true);
+		timer_start_wave.set_wait_time(wave_list[0].interval);
 	}
 	~WaveManager()
 	{
