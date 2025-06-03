@@ -13,6 +13,21 @@ public:
 
 		timer_start_wave.set_one_shot(true);
 		timer_start_wave.set_wait_time(wave_list[0].interval);
+		timer_start_wave.set_on_timeout(
+			[&]() 
+			{
+				is_wave_started = true;
+				timer_spawn_enemy.set_wait_time(wave_list[idx_wave].spawn_event_list[0].interval);
+				timer_spawn_enemy.restart();
+			});
+
+		timer_spawn_enemy.set_one_shot(true);
+		timer_spawn_enemy.set_on_timeout([&]()
+			{
+
+			});
+
+
 	}
 	~WaveManager()
 	{

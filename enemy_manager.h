@@ -29,6 +29,11 @@ public:
 			enemy->on_render(renderer);
 	}
 
+	void spawn_enemy()
+	{
+
+	}
+
 	EnemyManager()=default;
 	~EnemyManager()
 	{
