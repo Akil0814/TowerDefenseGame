@@ -5,6 +5,7 @@
 
 class HomeManager:public Manager<HomeManager>
 {
+	friend class Manager<HomeManager>;
 public:
 	double get_current_hp_num()
 	{

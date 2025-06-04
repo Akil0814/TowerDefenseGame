@@ -28,8 +28,9 @@ public:
 				break;
 			else
 				idx_list.push_back(idx_next);
+
 			bool is_next_dir_exist = true;
-			const Tile& tile = map[idx_next.y][idx_next.y];
+			const Tile& tile = map[idx_next.y][idx_next.x];
 
 			if (tile.special_flag == 0)
 				break;
@@ -75,6 +76,8 @@ private:
 			if (idx.x == target_idx.x && idx.y == target_idx.y)
 				return true;
 		}
+
+		return false;
 	}
 
 };

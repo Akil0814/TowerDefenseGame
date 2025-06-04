@@ -54,6 +54,12 @@
     <ClInclude Include="wave_manager.h">
       <Filter>manager</Filter>
     </ClInclude>
+    <ClInclude Include="coin_manager.h">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
@@ -61,6 +67,9 @@
     </Filter>
     <Filter Include="enemy">
       <UniqueIdentifier>{b161b1f8-fb69-479d-b658-6e37f8966fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bullet">
+      <UniqueIdentifier>{d34c06f7-168e-44ab-9f31-91ddd8c906d4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
