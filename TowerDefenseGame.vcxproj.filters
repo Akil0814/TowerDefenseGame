@@ -60,6 +60,18 @@
     <ClInclude Include="bullet.h">
       <Filter>bullet</Filter>
     </ClInclude>
+    <ClInclude Include="arrow._bullet.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="axe_bullet.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="shell_bullet.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet_manager.h">
+      <Filter>manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
