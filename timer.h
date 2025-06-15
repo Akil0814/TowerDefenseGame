@@ -48,8 +48,10 @@ public:
 		{
 			bool can_shot = (!one_shot || (one_shot && !shotted));
 			shotted = true;
+
 			if (can_shot && on_timeout)
 				on_timeout();
+
 			pass_time -= wait_time;
 		}
 	}

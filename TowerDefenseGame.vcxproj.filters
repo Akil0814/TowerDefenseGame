@@ -60,7 +60,7 @@
     <ClInclude Include="bullet.h">
       <Filter>bullet</Filter>
     </ClInclude>
-    <ClInclude Include="arrow._bullet.h">
+    <ClInclude Include="arrow_bullet.h">
       <Filter>bullet</Filter>
     </ClInclude>
     <ClInclude Include="axe_bullet.h">
@@ -72,6 +72,15 @@
     <ClInclude Include="bullet_manager.h">
       <Filter>manager</Filter>
     </ClInclude>
+    <ClInclude Include="bullet_type.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="tower.h">
+      <Filter>tower</Filter>
+    </ClInclude>
+    <ClInclude Include="tower_type.h">
+      <Filter>tower</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
@@ -82,6 +91,9 @@
     </Filter>
     <Filter Include="bullet">
       <UniqueIdentifier>{d34c06f7-168e-44ab-9f31-91ddd8c906d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tower">
+      <UniqueIdentifier>{ea2e2a74-3567-4b62-824f-b34f5fad51ea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

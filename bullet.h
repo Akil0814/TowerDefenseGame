@@ -26,7 +26,7 @@ public:
 		this->position = position;
 	}
 
-	void set_damage()
+	void set_damage(double damage)
 	{
 		this->damage = damage;
 	}
@@ -67,7 +67,7 @@ public:
 		is_collisional = false;
 	}
 
-	bool can_remove()
+	bool can_remove()const
 	{
 		return !is_valid;
 	}
