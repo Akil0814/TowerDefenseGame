@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="..\SDLtest\thirdparty\cJSON\cJSON.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="facing.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="map.h" />

@@ -143,6 +143,7 @@ copy /Y "%DLL_SRC_DIR%\SDL2_ttf\lib\x64\SDL2_ttf.dll" "$(OutDir)"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\SDLtest\thirdparty\cJSON\cJSON.c" />
+    <ClCompile Include="facing.h" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

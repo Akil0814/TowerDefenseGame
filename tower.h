@@ -1,5 +1,6 @@
 #pragma once
 #include"vector2.h"
+#include"facing.h"
 #include"animation.h"
 #include"tower_type.h"
 #include"bullet_manager.h"
