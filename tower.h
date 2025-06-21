@@ -138,7 +138,7 @@ private:
 
 	Enemy* find_target_enemy()
 	{
-
+		double process = -1;
 	}
 
 	void on_fire()
@@ -186,6 +186,7 @@ private:
 		BulletManager::instance()->fire_bullet(bullet_type, position, direction.normalize() * fire_speed * SIZE_TILE, damage);
 
 		bool is_show_x_anim = abs(direction.x) >= abs(direction.y);
+
 		if (is_show_x_anim)
 			facing = direction.x > 0 ? Facing::Right : Facing::Left;
 		else
@@ -193,7 +194,6 @@ private:
 
 		update_fire_animation();
 		anim_current->reset();
-
 	}
 
 protected:
