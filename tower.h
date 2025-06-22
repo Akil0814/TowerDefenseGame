@@ -4,6 +4,7 @@
 #include"animation.h"
 #include"tower_type.h"
 #include"bullet_manager.h"
+#include"enemy_manager.h"
 
 class Tower
 {
@@ -139,6 +140,42 @@ private:
 	Enemy* find_target_enemy()
 	{
 		double process = -1;
+		double view_range = 0;
+		Enemy* enemy_target = nullptr;
+
+		static ConfigManager* instance = ConfigManager::instance();
+
+		switch (tower_type)
+		{
+		case Archer:
+			view_range = instance->archer_template.view_range[instance->level_archer];
+			break;
+		case Axeman:
+			view_range = instance->axeman_template.view_range[instance->level_axeman];
+			break;
+		case Gunner:
+			view_range = instance->gunner_template.view_range[instance->level_gunner];
+			break;
+		}
+
+		EnemyManager::EnemyList& enemy_list = EnemyManager::instance()->get_enemy_list();
+
+
+		for (Enemy* enemy : enemy_list)
+		{
+			if ((enemy->get_position() - position).length() <= view_range * SIZE_TILE)
+			{
+				double new_process = enemy->get_route_process();
+
+				if (new_process > process)
+				{
+					enemy_target = enemy;
+					process = new_process;
+				}
+			}
+		}
+
+		return enemy_target;
 	}
 
 	void on_fire()

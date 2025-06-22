@@ -107,10 +107,14 @@ public:
 			delete enemy;
 	}
 
-
 	bool check_cleared()
 	{
 		return enemy_list.empty();
+	}
+
+	EnemyManager::EnemyList& get_enemy_list()
+	{
+		return enemy_list;
 	}
 
 private:
