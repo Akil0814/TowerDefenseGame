@@ -148,7 +148,9 @@ copy /Y "%DLL_SRC_DIR%\SDL2_ttf\lib\x64\SDL2_ttf.dll" "$(OutDir)"
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
+    <ClInclude Include="archer_tower.h" />
     <ClInclude Include="arrow_bullet.h" />
+    <ClInclude Include="axeman_tower.h" />
     <ClInclude Include="axe_bullet.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="bullet_manager.h" />
@@ -161,6 +163,7 @@ copy /Y "%DLL_SRC_DIR%\SDL2_ttf\lib\x64\SDL2_ttf.dll" "$(OutDir)"
     <ClInclude Include="game_manager.h" />
     <ClInclude Include="goblin_enemy.h" />
     <ClInclude Include="goblin_priest_enemy.h" />
+    <ClInclude Include="gunner_tower.h" />
     <ClInclude Include="home_manager.h" />
     <ClInclude Include="king_slim_enemy.h" />
     <ClInclude Include="manager.h" />

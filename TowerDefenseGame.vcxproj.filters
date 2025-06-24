@@ -82,6 +82,15 @@
     <ClInclude Include="tower_type.h">
       <Filter>tower</Filter>
     </ClInclude>
+    <ClInclude Include="gunner_tower.h">
+      <Filter>tower</Filter>
+    </ClInclude>
+    <ClInclude Include="axeman_tower.h">
+      <Filter>tower</Filter>
+    </ClInclude>
+    <ClInclude Include="archer_tower.h">
+      <Filter>tower</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="manager">
