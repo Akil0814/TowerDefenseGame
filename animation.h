@@ -86,7 +86,7 @@ public:
 		rect_dst.w = width_frame;
 		rect_dst.h = height_frame;
 
-		SDL_RenderCopyEx(renderer, texture, &rect_src_list[idx_frame], &rect_dst, 0, nullptr, SDL_RendererFlip::SDL_FLIP_NONE);
+		SDL_RenderCopyEx(renderer, texture, &rect_src_list[idx_frame], &rect_dst, angle, nullptr, SDL_RendererFlip::SDL_FLIP_NONE);
 
 	}
 

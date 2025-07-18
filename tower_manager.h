@@ -53,7 +53,7 @@ public:
 		switch (type)
 		{
 		case Archer:
-			return instance->level_archer == 9 ? -1 :
+			return instance->level_archer == 9 ? -1 ://达到满级后返回-1，若没有则返回对于的值
 				instance->archer_template.upgrade_cost[instance->level_archer];
 			break;
 		case Axeman:
@@ -132,7 +132,7 @@ public:
 		switch (type)
 		{
 		case Archer:
-			instance->level_archer = instance->level_archer >= 9 ? 9 : instance->level_archer + 1;
+			instance->level_archer = instance->level_archer >= 9 ? 9 : instance->level_archer + 1;//检测 如果满级就不升级
 			break;
 		case Axeman:
 			instance->level_axeman = instance->level_axeman >= 9 ? 9 : instance->level_axeman + 1;

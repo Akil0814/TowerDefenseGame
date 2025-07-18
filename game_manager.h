@@ -6,6 +6,9 @@
 #include"enemy_manager.h"
 #include"wave_manager.h"
 
+#include"tower_manager.h"
+#include"bullet_manager.h"
+
 #include<iostream>
 #include<SDL.h>
 #include <SDL_ttf.h>//字体库
@@ -20,6 +23,7 @@ class GameManager :public Manager<GameManager>
 public:
 	int run(int argc, char** argv)
 	{
+		TowerManager::instance()->place_tower(TowerType::Archer, { 5,0 });////////////////
 
 		Uint64 last_counter = SDL_GetPerformanceCounter();
 		const Uint64 counter_freq = SDL_GetPerformanceFrequency();//获取高性能计数器的频率
@@ -118,6 +122,9 @@ private:
 		{
 			WaveManager::instance()->on_update(delta);
 			EnemyManager::instance()->on_update(delta);
+			BulletManager::instance()->on_update(delta);
+			TowerManager::instance()->on_update(delta);
+
 		}
 	}
 
@@ -128,6 +135,9 @@ private:
 		SDL_RenderCopy(renderer, tex_tile_map, nullptr, &rect_dst);
 
 		EnemyManager::instance()->on_render(renderer);
+		BulletManager::instance()->on_render(renderer);
+		TowerManager::instance()->on_render(renderer);
+
 	}
 
 	bool generate_tile_map_texture()
